@@ -23,10 +23,13 @@ super + F11
 	bspc node -t ~fullscreen
 
 XF86AudioMute
-    pactl set-sink-mute @DEFAULT_SINK@ toggle
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 XF86AudioMicMute
-    pactl set-source-mute @DEFAULT_SOURCE@ toggle
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 XF86Audio{Raise,Lower}Volume
-    pactl set-sink-volume @DEFAULT_SINK@ {+,-}2%
+	pactl set-sink-volume @DEFAULT_SINK@ {+,-}2%
+
+Print
+	scrot ${HOME}/Imagens/screenshots/
