@@ -1,0 +1,2 @@
+#!/bin/sh
+mpv --ytdl-format="bestvideo[height=?${1}][fps<=?${2}][vcodec!=?vp9]+bestaudio/best" $3
