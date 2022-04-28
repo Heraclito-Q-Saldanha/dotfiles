@@ -40,19 +40,14 @@ else
 fi
 
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+	if [ -f /usr/share/bash-completion/bash_completion ]; then
+		. /usr/share/bash-completion/bash_completion
+	elif [ -f /etc/bash_completion ]; then
+		. /etc/bash_completion
+	fi
 fi
 
 LOCAL_BIN=${HOME}/.local/bin
 if [ -d "$LOCAL_BIN" ]; then
 	PATH=${PATH}:${LOCAL_BIN}
-fi
-
-CARGO_ENV=${HOME}/.cargo/env
-if [ -f "$CARGO_ENV" ]; then
-	. ${CARGO_ENV}
 fi
