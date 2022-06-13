@@ -2,7 +2,7 @@ super + Return
 	gnome-terminal
 
 super + @space
-	rofi -show run
+	rofi -show drun
 
 super + Escape
 	xkill
