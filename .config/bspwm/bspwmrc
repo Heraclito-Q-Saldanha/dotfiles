@@ -13,4 +13,5 @@ bspc config gapless_monocle      true
 
 ${HOME}/.fehbg
 compton &
+lxpolkit &
 polybar start -r
