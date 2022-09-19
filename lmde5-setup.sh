@@ -59,7 +59,7 @@ sudo apt install -y \
 # amd-gpu-fan-daemon
 wget https://github.com/Heraclito-Q-Saldanha/amd-gpu-fan-daemon/releases/download/v1.0.0/amd-gpu-fan-daemon_amd64_V1.0.0.deb -O \
 	/tmp/amd-gpu-fan-daemon_amd64_V1.0.0.deb \
-	&& sudo apt install /tmp/amd-gpu-fan-daemon_amd64_V1.0.0.deb; \
+	&& sudo apt install -y /tmp/amd-gpu-fan-daemon_amd64_V1.0.0.deb; \
 	rm /tmp/amd-gpu-fan-daemon_amd64_V1.0.0.deb
 
 # google chrome
@@ -88,7 +88,7 @@ echo '{
 }' > ~/.config/VSCodium/product.json
 
 # flatpak
-flatpak install flathub -y com.obsproject.Studio com.valvesoftware.Steam org.kde.kdenlive net.lutris.Lutris com.github.tchx84.Flatseal org.gimp.GIMP
+flatpak install flathub -y com.obsproject.Studio com.valvesoftware.Steam org.kde.kdenlive net.lutris.Lutris com.github.tchx84.Flatseal org.gimp.GIMP org.blender.Blender com.orama_interactive.Pixelorama
 
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
