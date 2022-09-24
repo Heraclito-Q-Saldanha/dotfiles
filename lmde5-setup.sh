@@ -20,6 +20,7 @@ sudo apt purge -y \
 	simple-scan* \
 	drawing* \
 	pix* \
+	zathura* \
 	webapp-manager* \
 	thunderbird* \
 	hexchat* \
@@ -46,6 +47,7 @@ sudo apt upgrade -y
 sudo apt install -y \
 	build-essential \
 	clang \
+	openjdk-11-jdk \
 	cmake \
 	wget \
 	curl \
