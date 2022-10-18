@@ -24,7 +24,6 @@ sudo apt purge -y \
 	webapp-manager* \
 	thunderbird* \
 	hexchat* \
-	firefox* \
 	hypnotix* \
 	rhythmbox* \
 	system-config-printer* \
@@ -63,11 +62,6 @@ wget https://github.com/Heraclito-Q-Saldanha/amd-gpu-fan-daemon/releases/downloa
 	&& sudo apt install -y /tmp/amd-gpu-fan-daemon_amd64_V1.0.0.deb; \
 	rm /tmp/amd-gpu-fan-daemon_amd64_V1.0.0.deb
 
-# google chrome
-wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
-sudo apt update && apt install google-chrome-stable -y
-
 # codium
 wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
     | gpg --dearmor \
@@ -91,10 +85,10 @@ echo '{
 #virtualbox
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/oracle-virtualbox-2016.gpg] https://download.virtualbox.org/virtualbox/debian bullseye contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
 wget -O- https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --dearmor --yes --output /usr/share/keyrings/oracle-virtualbox-2016.gpg
-sudo apt update && sudo apt install virtualbox -y
+sudo apt update && sudo apt install virtualbox-6.1 -y
 
 # flatpak
-flatpak install flathub -y com.obsproject.Studio com.valvesoftware.Steam org.kde.kdenlive net.lutris.Lutris com.github.tchx84.Flatseal org.gimp.GIMP org.blender.Blender com.orama_interactive.Pixelorama
+flatpak install flathub -y com.obsproject.Studio org.kde.kdenlive com.github.tchx84.Flatseal org.gimp.GIMP org.blender.Blender com.orama_interactive.Pixelorama
 
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
@@ -102,4 +96,3 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 # grub
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/' /etc/default/grub
 sudo update-grub
-

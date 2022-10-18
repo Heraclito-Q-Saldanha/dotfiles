@@ -1,5 +1,5 @@
 super + Return
-	gnome-terminal
+	kitty
 
 super + @space
 	rofi -show drun
@@ -32,4 +32,7 @@ XF86Audio{Raise,Lower}Volume
 	pactl set-sink-volume @DEFAULT_SINK@ {+,-}2%
 
 Print
-	scrot ${HOME}/Imagens/screenshots/
+	scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f && rm $f'
+
+super + {Left,Down,Up,Right}
+	bspc node -p {west,south,north,east}
