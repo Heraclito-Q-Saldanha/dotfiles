@@ -47,6 +47,14 @@ if ! shopt -oq posix; then
 	fi
 fi
 
+command_not_found_handle() {
+        if [ ! -e /run/.containerenv ] && [ ! -e /.dockerenv ]; then
+                exit 127
+        fi
+
+        distrobox-host-exec "${@}"
+}
+
 LOCAL_BIN=${HOME}/.local/bin
 if [ -d "$LOCAL_BIN" ]; then
 	PATH=${PATH}:${LOCAL_BIN}

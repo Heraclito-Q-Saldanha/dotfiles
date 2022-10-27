@@ -38,7 +38,7 @@ cursor-scroll = ns-resize
 
 [module/amdgpufan]
 type = custom/script
-exec = amd-gpu-fan-daemon -dsl | grep temp | cut -c7-
+exec = distrobox-host-exec /usr/bin/amd-gpu-fan-daemon -dsl | grep temp | cut -c7-
 label = GPU %output%
 format-underline = "#fcba03"
 interval = 5
