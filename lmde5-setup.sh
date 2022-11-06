@@ -73,12 +73,12 @@ echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https:/
     | sudo tee /etc/apt/sources.list.d/vscodium.list
 sudo apt update && apt install codium -y
 
-#virtualbox
+# virtualbox
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/oracle-virtualbox-2016.gpg] https://download.virtualbox.org/virtualbox/debian bullseye contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
 wget -O- https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --dearmor --yes --output /usr/share/keyrings/oracle-virtualbox-2016.gpg
 sudo apt update && sudo apt install virtualbox-6.1 -y
 
-#update xpad
+# update xpad
 sudo git clone https://github.com/paroj/xpad.git /usr/src/xpad-0.4
 sudo dkms install -m xpad -v 0.4
 
@@ -91,3 +91,6 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 # grub
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/' /etc/default/grub
 sudo update-grub
+
+# distrobox
+curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sudo sh
