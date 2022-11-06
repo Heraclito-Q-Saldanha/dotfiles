@@ -2,6 +2,7 @@
 
 cp .bashrc ~
 cp -r .config/VSCodium ~/.config/VSCodium
+cp -r .config/qt5ct ~/.config/qt5ct
 
 sudo apt update -y
 
