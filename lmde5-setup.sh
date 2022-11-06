@@ -1,6 +1,7 @@
 #!/bin/sh
 
 cp .bashrc ~
+cp -r .config/VSCodium ~/.config/VSCodium
 
 sudo apt update -y
 
@@ -54,7 +55,8 @@ sudo apt install -y \
 	git-lfs \
 	htop \
 	mint-meta-codecs \
-	papirus-icon-theme
+	papirus-icon-theme \
+	podman
 
 # amd-gpu-fan-daemon
 wget https://github.com/Heraclito-Q-Saldanha/amd-gpu-fan-daemon/releases/download/v1.0.0/amd-gpu-fan-daemon_amd64_V1.0.0.deb -O \
@@ -70,22 +72,14 @@ echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https:/
     | sudo tee /etc/apt/sources.list.d/vscodium.list
 sudo apt update && apt install codium -y
 
-mkdir -p ~/.config/VSCodium
-
-echo '{
-	"extensionsGallery": {
-		"serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
-		"cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
-		"itemUrl": "https://marketplace.visualstudio.com/items",
-		"controlUrl": "",
-		"recommendationsUrl": ""
-	}
-}' > ~/.config/VSCodium/product.json
-
 #virtualbox
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/oracle-virtualbox-2016.gpg] https://download.virtualbox.org/virtualbox/debian bullseye contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
 wget -O- https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --dearmor --yes --output /usr/share/keyrings/oracle-virtualbox-2016.gpg
 sudo apt update && sudo apt install virtualbox-6.1 -y
+
+#update xpad
+sudo git clone https://github.com/paroj/xpad.git /usr/src/xpad-0.4
+sudo dkms install -m xpad -v 0.4
 
 # flatpak
 flatpak install flathub -y com.obsproject.Studio org.kde.kdenlive com.github.tchx84.Flatseal org.gimp.GIMP org.blender.Blender com.orama_interactive.Pixelorama
