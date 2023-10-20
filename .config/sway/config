@@ -1,8 +1,12 @@
 set $mod Mod4
-set $term kitty
+set $term alacritty
 set $menu rofi -show drun
 
-output * bg /home/heraclito/Imagens/wallpaper/FA2i5eYUUAMbwTy.jpeg fill
+exec systemctl --user import-environment WAYLAND_DISPLAY SDG_CURRENT_DESKTOP
+exec dbus-update-activation-environment --sustemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec /usr/bin/lxpolkit
+
+#output * bg /home/heraclito/Imagens/wallpaper/FA2i5eYUUAMbwTy.jpeg fill
 
 gaps inner 2
 gaps outer 1
