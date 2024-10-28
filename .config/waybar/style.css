@@ -51,7 +51,13 @@ button:hover {
     border-bottom: 3px solid #ffecd6;
 }
 
-#clock,
+#clock {
+    color: #ffecd6;
+    background-color: #183047;
+    margin: 0 2px;
+    padding: 0 10px;
+}
+
 #cpu,
 #memory,
 #temperature,
