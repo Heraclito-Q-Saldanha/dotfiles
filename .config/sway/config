@@ -4,6 +4,7 @@ set $menu wofi --show drun
 
 exec systemctl --user import-environment WAYLAND_DISPLAY SDG_CURRENT_DESKTOP
 exec dbus-update-activation-environment --sustemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec dbus-update-activation-environment --systemd DISPLAY
 exec /usr/bin/lxpolkit
 
 #output * bg /home/heraclito/Imagens/wallpaper/FA2i5eYUUAMbwTy.jpeg fill
