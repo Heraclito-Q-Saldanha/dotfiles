@@ -7,12 +7,14 @@ exec dbus-update-activation-environment --sustemd WAYLAND_DISPLAY XDG_CURRENT_DE
 exec dbus-update-activation-environment --systemd DISPLAY
 exec /usr/bin/lxpolkit
 
-#output * bg /home/heraclito/Imagens/wallpaper/FA2i5eYUUAMbwTy.jpeg fill
+#output * mode 2560x1080@100.003Hz bg /home/heraclito/Imagens/wallpaper/1.png fill
 
 gaps inner 2
 gaps outer 1
 
 default_border pixel 0
+
+bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy
 
 bindsym $mod+Return exec $term
 
