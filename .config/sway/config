@@ -2,19 +2,16 @@ set $mod Mod4
 set $term alacritty
 set $menu wofi --show drun
 
-exec systemctl --user import-environment WAYLAND_DISPLAY SDG_CURRENT_DESKTOP
-exec dbus-update-activation-environment --sustemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-exec dbus-update-activation-environment --systemd DISPLAY
 exec /usr/bin/lxpolkit
 
-#output * mode 2560x1080@100.003Hz bg /home/heraclito/Imagens/wallpaper/1.png fill
+#output * mode 2560x1080@100.003Hz bg /home/heraclito/Imagens/wallpapers/mountains-lake-Moon-night-night-sky-long-exposure.jpg fill
 
 gaps inner 2
 gaps outer 1
 
 default_border pixel 0
 
-bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy
+bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy --type image/png
 
 bindsym $mod+Return exec $term
 
@@ -87,4 +84,4 @@ input "type:keyboard"   {
 	xkb_model abnt2
 }
 
-include @sysconfdir@/sway/config.d/*
+include /etc/sway/config.d/*
