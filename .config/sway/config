@@ -84,4 +84,8 @@ input "type:keyboard"   {
 	xkb_model abnt2
 }
 
+input "type:pointer" {
+	accel_profile "flat"
+}
+
 include /etc/sway/config.d/*
