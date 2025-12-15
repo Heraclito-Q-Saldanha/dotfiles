@@ -11,7 +11,8 @@ gaps outer 1
 
 default_border pixel 0
 
-bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy --type image/png
+bindsym $mod+Shift+p exec grim -g "$(slurp -d)" - | wl-copy --type image/png
+bindsym $mod+p exec grim - | wl-copy --type image/png
 
 bindsym $mod+Return exec $term
 
