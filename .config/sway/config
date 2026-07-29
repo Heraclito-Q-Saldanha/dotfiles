@@ -1,6 +1,7 @@
 set $mod Mod4
 set $term alacritty
-set $menu wofi --show drun
+set $filemanager thunar
+set $menu wofi
 
 exec /usr/bin/lxpolkit
 
@@ -15,16 +16,15 @@ bindsym $mod+Shift+p exec grim -g "$(slurp -d)" - | wl-copy --type image/png
 bindsym $mod+p exec grim - | wl-copy --type image/png
 
 bindsym $mod+Return exec $term
+bindsym $mod+E exec $filemanager
+bindsym $mod+space exec $menu
 
 bindsym $mod+w kill
-
-bindsym $mod+space exec $menu
+bindsym $mod+Shift+w exec swaymsg exit
 
 floating_modifier $mod
 
 bindsym $mod+Shift+r reload
-
-bindsym $mod+Shift+w exec swaymsg exit
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -59,13 +59,7 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 bindsym $mod+F11 fullscreen toggle
-
 bindsym $mod+f floating toggle
-
-bindsym $mod+Mod1+Left resize shrink width 10px
-bindsym $mod+Mod1+Down resize grow height 10px
-bindsym $mod+Mod1+Up resize shrink height 10px
-bindsym $mod+Mod1+Right resize grow width 10px
 
 set $gnome-schema org.gnome.desktop.interface
 
