@@ -4,7 +4,7 @@ set $menu wofi --show drun
 
 exec /usr/bin/lxpolkit
 
-#output * mode 2560x1080@100.003Hz bg /home/heraclito/Imagens/wallpapers/mountains-lake-Moon-night-night-sky-long-exposure.jpg fill
+output * mode 2560x1440@180.001Hz scale 1.2 bg /home/heraclito/Imagens/wallpaper/christ_in_the_desert.jpg fill
 
 gaps inner 2
 gaps outer 1
@@ -66,6 +66,13 @@ bindsym $mod+Mod1+Left resize shrink width 10px
 bindsym $mod+Mod1+Down resize grow height 10px
 bindsym $mod+Mod1+Up resize shrink height 10px
 bindsym $mod+Mod1+Right resize grow width 10px
+
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+	gsettings set $gnome-schema gtk-theme 'Arc-Dark'
+	gsettings set $gnome-schema icon-theme 'Papirus-Dark'
+}
 
 bar {
 	swaybar_command waybar
