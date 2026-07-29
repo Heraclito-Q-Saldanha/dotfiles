@@ -58,17 +58,9 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
-bindsym $mod+e split toggle
-
 bindsym $mod+F11 fullscreen toggle
 
 bindsym $mod+f floating toggle
-
-bindsym $mod+a focus parent
-
-bindsym $mod+Shift+minus move scratchpad
-
-bindsym $mod+minus scratchpad show
 
 bindsym $mod+Mod1+Left resize shrink width 10px
 bindsym $mod+Mod1+Down resize grow height 10px
